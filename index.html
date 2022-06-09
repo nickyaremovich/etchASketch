@@ -10,13 +10,14 @@
   <body>
     <div class="flex-container"
         <h3 class="header">Etch-A-Sketch</h3>
+        <div class="pen">Pen: On</div>
         <div class="container">
             <div class="board"></div>
             <div class="buttons">
-                <button class="black">Black</button>
-                <button class="eraser">Eraser</button>
-                <button class="random">Random</button>
-                <button class="reset">Reset</button>
+                <button onclick="changeColor('black')">Black</button>
+                <button onclick="changeColor('white')">Eraser</button>
+                <button onclick="changeColor('random')">Random</button>
+                <button onclick="resetBoard()">Reset</button>
             </div>
             <div class="size">
                 <input type="text" placeholder="Board Size" value="16" onchange="changeSize(this.value)" />

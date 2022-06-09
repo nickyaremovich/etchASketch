@@ -1,3 +1,6 @@
+let color = 'black';
+let click = true;
+
 function genBoard(size) { 
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
@@ -24,6 +27,31 @@ function changeSize(input) {
     };
 };
 
-function colorSquare {
-    square.style.backgroundColor = 'black';
+function colorSquare() {
+  if (click) {
+    if (color === 'random') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+    this.style.backgroundColor = color;
+    }
+  }   
 };
+
+function changeColor(choice) {
+    color = choice;
+};
+
+function resetBoard() {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.style.backgroundColor = 'white');
+}
+
+document.querySelector('body').addEventListener('click', () => {
+    click = !click;
+    if (click) {
+        document.querySelector('.pen').textContent = "Pen: On";
+    } else {
+        document.querySelector('.pen').textContent = "Pen: Off";
+    }
+});
